@@ -20,8 +20,9 @@ $(function() {
 
 $(window).scroll(function(){
     var scrollTop = $(document).scrollTop();
-    $('#intro .wrapper').css('padding-top', scrollTop/2);
-    console.log(scrollTop);
+    if( $(window).width() > 800){
+        $('#intro .wrapper').css('padding-top', scrollTop/2);
+    }
     if( scrollTop > $(window).height() - 150){
         $('#main-nav').addClass('back-to-top-active');
     }else{

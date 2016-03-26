@@ -2,10 +2,11 @@
 .visually-hidden{ position: absolute; left: -99999px; }
 h1,h2,h3,h4,h5,h6{ margin: 0; }
 h2,h3,h4,h5,h6{ font-family: 'Abril Fatface', cursive; font-weight: normal; }
-h2{ font-size: 2em; }
+h2{ font-size: 2em !important; }
 p{ margin: 0 0 16px 0; }
 .wrapper{ max-width: 940px; margin: 0 auto; padding: 0 16px; }
-body{ background: url('../img/food-background2.jpg') no-repeat top center; background-size: cover; line-height: 1.4; background-attachment: fixed; font-family: 'Open Sans', sans-serif; }
+body{ background-color: #4E5F0B; line-height: 1.4;  font-family: 'Open Sans', sans-serif; }
+.backdrop{ background: url('../img/food-background.jpg') no-repeat top center; background-size: cover; position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
 body > section{ position: relative; }
 body > section + section{ padding: 48px 0; background: #f8ffd2; color: #4E5F0B; }
 body > section:last-of-type{ padding-bottom: 67px; }
@@ -14,20 +15,35 @@ section.alternate{ background: #4E5F0B; color: #f8ffd2; }
 #intro header{ font-family: 'Dancing Script', cursive; border-bottom: 1px solid rgba(255,255,255,.4); margin: 2em 0 3em 0; }
 .big-text{ font-size: 4em; max-width: 900px; line-height: 1.2; text-shadow: .02em .02em .03em rgba(0,0,0,.6); font-family: 'Abril Fatface', cursive; }
 .cta{ color: white; text-decoration: none; font-size: 1.6em; display: inline-block; margin-top: 20vh; }
-.cta:after{ content: 'v'; width: 1.4em; height: 1.4em; line-height: 1.4em; border: 1px solid rgba(255,255,255,.4); display: block; margin: 0 auto; border-radius: 50%; }
+.cta:after{ content: '\25BC'; font-family: 'Times New Roman'; width: 1.4em; height: 1.4em; line-height: 1.4em; border: 1px solid white; display: block; margin: 0 auto; font-size: 0.8em; border-radius: 50%; padding: .3em 0.2em .1em .2em; opacity: .5; transition: all .3s; }
+.cta:hover:after{ opacity: 1; }
 #main-nav{ position: fixed; bottom: 0; width: 100%; background: #b8d326; box-shadow: 0 0 1px rgba(78, 95, 11, 0.7); border-top: 1px solid #D0E655; text-align: center; z-index: 1; }
 #main-nav ul{ margin: 0; padding: 0; }
 #main-nav li{ list-style: none; display: inline-block; }
 #main-nav a{ color: #4E5F0B; display: block; text-decoration: none; padding: 1em; font-size: 1.2em; transition: all .3s; }
 #main-nav a:hover, #main-nav a:focus{ background: #e6fc73; }
-.back-to-top{ position: absolute; right: -99px; top: 0; opacity: 0; transition: opacity .3s; }
-.back-to-top-active .back-to-top{ opacity: 1; right: 0; }
-.back-to-top:before{ content: '^'; }
+.back-to-top{ position: absolute; right: -99px; top: 0; opacity: 0; font-size: 1em !important; line-height: 2; color: white !important; transition: opacity .3s; }
+.back-to-top-active .back-to-top{ opacity: .8; right: 0; }
+.back-to-top:before{ content: '\25B2'; font-family: 'Times New Roman'; }
+.back-to-top:hover:before{ color:#4E5F0B !important; }
 .copy{ overflow: auto; }
 .copy img{ border: 10px rgba(248, 255, 210, 0.4) solid; max-width: 33%; }
 .copy .align-right{ float: right; margin: 0 0 16px 32px; }
-.cognito{ max-width: 600px; margin: 0 auto; }
-
+.cognito, .email-form{ max-width: 600px; margin: 0 auto; }
+.cognito h2{ color:#4E5F0B !important; }
+.mc-field-group{ margin-bottom: .7em; }
+.mc-field-group label{ display: block; }
+.mc-field-group input{ display: block; max-width: 380px; width: 100%; }
+button, .c-button, input[type=submit]{ padding: .5em 1.25em; background: rgba(255, 255, 255, 0.55) !important; border: #D85001 1px solid !important; border-radius: 0 !important; color: #D85001 !important; font-family: "Open Sans" !important; }
+input[type=submit], #c-submit-button{ font-size: 1.3em !important; }
+.cognito .c-forms-form{ font-family: "Open Sans" !important; font-size: 16px !important; color: #4E5F0B !important;}
+input, select{ font-family: "Open Sans" !important; padding: 4px; }
+input[type=text]{ font-size: 16px !important; }
+.c-dropdown{ background: white; padding: 4px; }
+.c-field{ margin-bottom: 8px; }
+@media(max-width: 600px) and (max-height: 700px){
+    .backdrop{ background-image: url('../img/food-background-mobile.jpg'); }
+}
 @media (max-width: 950px){
     .copy img{ border-width: 1px; }
     .copy .align-right{ margin: 0 0 8px 16px; }
@@ -47,7 +63,8 @@ section.alternate{ background: #4E5F0B; color: #f8ffd2; }
 @media (max-width: 450px){
     #main-nav a{ font-size: 1.1em; padding: .8em; }
     .big-text{ font-size: 3.3em; }
-    #intro{ height: calc(100vh - 4em); }
+    #intro{ height: calc(100vh - 3.5em); }
+    .back-to-top{ line-height: 1.4; }
 }
 @media (max-width: 400px){
     #main-nav a{ font-size: .95em; padding: .7em; }
